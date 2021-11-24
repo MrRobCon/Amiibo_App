@@ -6,13 +6,15 @@ data class AmiiboEntity(
     var id: Int,
     var name: String,
     var character: String,
-    var game: String
+    var gameSeries: String,
+    val image: String
 ) {
-    constructor() : this(NEW_AMIIBO_ID, "", "", "")
-    constructor(name: String, character: String, game: String) : this(
+    constructor() : this(NEW_AMIIBO_ID, "", "", "", "")
+    constructor(name: String, character: String, game: String, image: String) : this(
         NEW_AMIIBO_ID,
         name,
         character,
-        game
+        game,
+        image
     )
 }

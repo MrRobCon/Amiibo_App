@@ -10,11 +10,11 @@ data class AmiiboEntity(
     val image: String
 ) {
     constructor() : this(NEW_AMIIBO_ID, "", "", "", "")
-    constructor(name: String, character: String, game: String, image: String) : this(
+    constructor(name: String, character: String, gameSeries: String, image: String) : this(
         NEW_AMIIBO_ID,
         name,
         character,
-        game,
+        gameSeries,
         image
     )
 }

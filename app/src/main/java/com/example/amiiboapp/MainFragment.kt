@@ -2,32 +2,29 @@ package com.example.amiiboapp
 
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.amiiboapp.databinding.MainFragmentBinding
 
-class MainFragment : Fragment() {
+import com.example.amiiboapp.databinding.FragmentMainBinding
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
+class MainFragment : Fragment(){
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var binding: MainFragmentBinding
+    private lateinit var binding: FragmentMainBinding
     private lateinit var adapter: AmiiboListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = MainFragmentBinding.inflate(inflater,container,false)
+        binding = FragmentMainBinding.inflate(inflater,container,false)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         with(binding.recyclerView){
@@ -47,6 +44,4 @@ class MainFragment : Fragment() {
         return binding.root
 
     }
-
-
 }

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditorFragment"
-    >
+    tools:context=".EditorFragment">
 
 
     <TextView
         android:id="@+id/nameHeading"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="122dp"
+        android:layout_height="30dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
@@ -25,10 +23,10 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="46dp"
 
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="28dp"
         android:hint="@string/enter_amiibo_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -39,11 +37,11 @@
 
     <TextView
         android:id="@+id/characterHeading"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
 
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:text="Character: "
         android:textSize="20sp"
@@ -55,17 +53,19 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/enter_character"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/characterHeading"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Character here" />
 
     <TextView
-        android:id="@+id/gameSeries"
+        android:id="@+id/gameSeriesHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -77,19 +77,17 @@
         app:layout_constraintTop_toBottomOf="@+id/characterHeading" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/gameSeries"
         android:layout_width="190dp"
         android:layout_height="27dp"
-        android:layout_margin="16dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="152dp"
         android:hint="@string/enter_amiibo_gameseries"
         android:inputType="textCapSentences|textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gameSeries"
-        app:layout_constraintTop_toBottomOf="@+id/character"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225"
         tools:ignore="Autofill"
         tools:text="Game Series in here" />
 

@@ -8,8 +8,7 @@ data class AmiiboEntity(
     var id: Int,
     var name: String?,
     var character: String?,
-    var gameSeries: String?,
-    val image: String?
+    var gameSeries: String?
 ) : Parcelable
 {
 
@@ -17,18 +16,16 @@ data class AmiiboEntity(
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
         parcel.readString()
     ) {
     }
 
-    constructor() : this(NEW_AMIIBO_ID, "", "", "", "")
+    constructor() : this(NEW_AMIIBO_ID, "", "", "")
     constructor(name: String, character: String, gameSeries: String, image: String) : this(
         NEW_AMIIBO_ID,
         name,
         character,
-        gameSeries,
-        image
+        gameSeries
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -36,7 +33,6 @@ data class AmiiboEntity(
         parcel.writeString(name)
         parcel.writeString(character)
         parcel.writeString(gameSeries)
-        parcel.writeString(image)
     }
 
     override fun describeContents(): Int {

@@ -4,4 +4,7 @@
     <string name="previous">Previous</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="enter_amiibo_gameseries">Enter Amiibo Game Series:</string>
+    <string name="enter_amiibo_name">Enter Amiibo Name:</string>
+    <string name="enter_character">Enter Character</string>
 </resources>

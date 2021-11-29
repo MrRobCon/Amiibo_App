@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.amiiboapp.data.AmiiboEntity
 import com.example.amiiboapp.databinding.ListItemBinding
 
-class AmiiboListAdapter(private val amiiboList: List<AmiiboEntity>) :
+class AmiiboListAdapter(private val amiiboList: List<AmiiboEntity>,
+    private val listener: ListItemListener) :
+
     RecyclerView.Adapter<AmiiboListAdapter.ViewHolder>() {
 
     val selectedAmiibo = arrayListOf<AmiiboEntity>()
@@ -28,9 +30,15 @@ class AmiiboListAdapter(private val amiiboList: List<AmiiboEntity>) :
         val amiibo = amiiboList[position]
         with(holder.binding) {
             nameText.text = amiibo.name
+            root.setOnClickListener{
+                listener.onItemClick(amiibo)
+            }
         }
     }
 
     override fun getItemCount() = amiiboList.size
 
+    interface ListItemListener {
+        fun onItemClick(amiibo: AmiiboEntity)
+    }
 }

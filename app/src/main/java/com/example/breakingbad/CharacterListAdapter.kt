@@ -1,19 +1,18 @@
-package com.example.amiiboapp
+package com.example.breakingbad
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.amiiboapp.data.AmiiboEntity
-import com.example.amiiboapp.databinding.ListItemBinding
+import com.example.breakingbad.data.CharacterEntity
+import com.example.breakingbad.databinding.ListItemBinding
 
-class AmiiboListAdapter(private val amiiboList: List<AmiiboEntity>,
-    private val listener: ListItemListener) :
+class CharacterListAdapter(private val characterList: List<CharacterEntity>,
+                           private val listener: ListItemListener) :
 
-    RecyclerView.Adapter<AmiiboListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<CharacterListAdapter.ViewHolder>() {
 
-    val selectedAmiibo = arrayListOf<AmiiboEntity>()
+    val selectedCharacter = arrayListOf<CharacterEntity>()
 
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -27,18 +26,18 @@ class AmiiboListAdapter(private val amiiboList: List<AmiiboEntity>,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val amiibo = amiiboList[position]
+        val character = characterList[position]
         with(holder.binding) {
-            nameText.text = amiibo.name
+            nameText.text = character.name
             root.setOnClickListener{
-                listener.onItemClick(amiibo)
+                listener.onItemClick(character)
             }
         }
     }
 
-    override fun getItemCount() = amiiboList.size
+    override fun getItemCount() = characterList.size
 
     interface ListItemListener {
-        fun onItemClick(amiibo: AmiiboEntity)
+        fun onItemClick(character: CharacterEntity)
     }
 }

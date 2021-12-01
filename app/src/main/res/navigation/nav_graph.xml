@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/editorFragment"
-        android:name="com.example.amiiboapp.EditorFragment"
+        android:name="com.example.breakingbad.EditorFragment"
         android:label="editor_fragment"
         tools:layout="@layout/editor_fragment" >
         <argument
-            android:name="amiibo"
-            app:argType="com.example.amiiboapp.data.AmiiboEntity" />
+            android:name="character"
+            app:argType="com.example.breakingbad.data.CharacterEntity" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.amiiboapp.MainFragment"
+        android:name="com.example.breakingbad.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_editorFragment"

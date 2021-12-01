@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">AmiiboApp</string>
-    <string name="enter_amiibo">Enter Amiibo</string>
+    <string name="app_name">BBCharacters</string>
     <string name="previous">Previous</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="enter_amiibo_gameseries">Enter Amiibo Game Series:</string>
-    <string name="enter_amiibo_name">Enter Amiibo Name:</string>
     <string name="enter_character">Enter Character</string>
+    <string name="enter_character_name">Enter Character Name</string>
+    <string name="enter_nickname">Enter nickname</string>
+    <string name="enter_character_birthday">Enter character birthday</string>
+    <string name="enter_character_status">Enter character status</string>
+    <string name="enter_actor">Enter actor</string>
 </resources>

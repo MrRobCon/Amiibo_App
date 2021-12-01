@@ -1,4 +1,4 @@
-package com.example.amiiboapp
+package com.example.breakingbad
 
 import androidx.lifecycle.ViewModel
 

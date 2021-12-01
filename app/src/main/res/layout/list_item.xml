@@ -10,12 +10,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     cardView:cardCornerRadius="8dp"
-    cardView:cardElevation="8dp"
+    cardView:cardElevation="16dp"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         cardView:layout_insetEdge="none">
 
 
@@ -24,27 +24,27 @@
             android:layout_width="72dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
             android:contentDescription="TODO"
-            cardView:backgroundTint="#76BC4A"
+            cardView:backgroundTint="#AFC1A4"
             cardView:fabSize="mini"
+            cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toStartOf="@+id/nameText"
             cardView:layout_constraintHorizontal_bias="0.0"
             cardView:layout_constraintStart_toStartOf="parent"
             cardView:layout_constraintTop_toTopOf="parent"
-            cardView:srcCompat="@drawable/ic_animal_crossing_leaf"
+            cardView:srcCompat="@drawable/ic_breaking_bad"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <TextView
             android:id="@+id/nameText"
-            android:layout_width="279dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="277dp"
+            android:layout_height="38dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toEndOf="parent"
-            cardView:layout_constraintHorizontal_bias="0.672"
+            cardView:layout_constraintHorizontal_bias="0.644"
             cardView:layout_constraintStart_toStartOf="parent"
             cardView:layout_constraintTop_toTopOf="parent"
             tools:text="Example Amiibo Goes Here" />

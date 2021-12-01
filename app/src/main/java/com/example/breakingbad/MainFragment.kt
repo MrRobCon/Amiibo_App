@@ -1,4 +1,4 @@
-package com.example.amiiboapp
+package com.example.breakingbad
 
 import android.os.Bundle
 import android.util.Log
@@ -12,16 +12,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.amiiboapp.data.AmiiboEntity
+import com.example.breakingbad.data.CharacterEntity
 
-import com.example.amiiboapp.databinding.FragmentMainBinding
+import com.example.breakingbad.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(),
-    AmiiboListAdapter.ListItemListener{
+    CharacterListAdapter.ListItemListener{
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
-    private lateinit var adapter: AmiiboListAdapter
+    private lateinit var adapter: CharacterListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,9 +44,9 @@ class MainFragment : Fragment(),
             addItemDecoration(divider)
         }
 
-        viewModel.amiiboList.observe(viewLifecycleOwner, Observer {
-            Log.i("amiiboLogging", it.toString())
-            adapter = AmiiboListAdapter(it, this@MainFragment)
+        viewModel.character.observe(viewLifecycleOwner, Observer {
+            Log.i("characterLogging", it.toString())
+            adapter = CharacterListAdapter(it, this@MainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
@@ -54,10 +54,10 @@ class MainFragment : Fragment(),
 
     }
 
-    override fun onItemClick(amiibo: AmiiboEntity) {
+    override fun onItemClick(character: CharacterEntity) {
 
-        Log.i(TAG, "onItemClick : Received Amiibo name ${amiibo.name}")
-        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(amiibo)
+        Log.i(TAG, "onItemClick : Received Character name ${character.name}")
+        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(character)
         findNavController().navigate(action)
 
     }

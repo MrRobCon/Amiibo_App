@@ -1,4 +1,4 @@
-package com.example.amiiboapp
+package com.example.breakingbad
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.amiiboapp.databinding.EditorFragmentBinding
+import com.example.breakingbad.databinding.EditorFragmentBinding
 
 class EditorFragment : Fragment() {
 
@@ -33,9 +33,11 @@ class EditorFragment : Fragment() {
 
         
         binding = EditorFragmentBinding.inflate(inflater, container, false)
-        binding.name.setText(args.amiibo.name)
-        binding.character.setText(args.amiibo.character)
-        binding.gameSeries.setText(args.amiibo.gameSeries)
+        binding.name.setText(args.character.name)
+        binding.nickname.setText(args.character.nickname)
+        binding.birthday.setText(args.character.birthday)
+        binding.status.setText(args.character.status)
+        binding.portrayed.setText(args.character.portrayed)
 
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
@@ -51,7 +53,7 @@ class EditorFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            // When the home button is clicked, save changes then return to the MainFragment, which is the List
+
             android.R.id.home -> saveAndReturn()
             else -> super.onOptionsItemSelected(item)
         }

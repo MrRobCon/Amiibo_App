@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
         android:id="@+id/name"
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nameHeading"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039"
+        app:layout_constraintVertical_bias="0.061"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Character name in here" />
 
@@ -72,29 +72,28 @@
         android:id="@+id/birthdayHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
         android:fontFamily="sans-serif-black"
         android:text="Birthday: "
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nicknameHeading"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/statusHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="124dp"
         android:fontFamily="sans-serif-black"
         android:text="Status: "
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nicknameHeading"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <TextView
         android:id="@+id/status"
@@ -108,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthday"
-        app:layout_constraintVertical_bias="0.094"
+        app:layout_constraintVertical_bias="0.065"
         tools:ignore="Autofill"
         tools:text="Status here" />
 
@@ -121,10 +120,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status"
-        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintVertical_bias="0.084"
         tools:ignore="Autofill"
         tools:text="Actor here" />
 
@@ -140,7 +139,7 @@
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <TextView
         android:id="@+id/birthday"
@@ -151,23 +150,23 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nickname"
-        app:layout_constraintVertical_bias="0.111"
+        app:layout_constraintVertical_bias="0.05"
         tools:ignore="Autofill"
         tools:text="Birthday in here" />
 
     <EditText
         android:id="@+id/myNotes"
-        android:layout_width="380dp"
-        android:layout_height="51dp"
+        android:layout_width="372dp"
+        android:layout_height="160dp"
         android:layout_marginStart="16dp"
-        android:hint="Enter your comments in here"
+        android:hint="Enter your comments on the character here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/portrayed"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.169" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

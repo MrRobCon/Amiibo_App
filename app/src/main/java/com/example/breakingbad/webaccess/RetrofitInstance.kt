@@ -1,4 +1,4 @@
-package com.example.breakingbad.dataaccess
+package com.example.breakingbad.webaccess
 
 import com.example.breakingbad.WEB_SERVICE_URL
 import okhttp3.OkHttpClient

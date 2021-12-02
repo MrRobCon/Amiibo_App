@@ -3,7 +3,7 @@ package com.example.breakingbad
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.breakingbad.data.CharacterEntity
-import com.example.breakingbad.dataaccess.RetrofitInstance
+import com.example.breakingbad.webaccess.RetrofitInstance
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {

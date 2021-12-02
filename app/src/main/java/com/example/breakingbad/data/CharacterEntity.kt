@@ -1,6 +1,5 @@
 package com.example.breakingbad.data
 
-import com.example.breakingbad.NEW_CHARACTER_ID
 import android.os.Parcelable
 import android.os.Parcel
 
@@ -23,16 +22,6 @@ data class CharacterEntity(
         parcel.readString()
     ) {
     }
-
-    constructor() : this(NEW_CHARACTER_ID, "", "", "", "", "")
-    constructor(name: String, nickname: String, birthday: String, status: String, portrayed: String) : this(
-        NEW_CHARACTER_ID,
-        name,
-        nickname,
-        birthday,
-        status,
-        portrayed
-    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(char_id)

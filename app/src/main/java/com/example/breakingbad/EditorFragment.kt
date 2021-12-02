@@ -2,6 +2,7 @@ package com.example.breakingbad
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -9,8 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.breakingbad.data.FavouriteEntity
 import com.example.breakingbad.databinding.EditorFragmentBinding
 
 class EditorFragment : Fragment() {
@@ -39,6 +42,14 @@ class EditorFragment : Fragment() {
         binding.status.setText(args.character.status)
         binding.portrayed.setText(args.character.portrayed)
 
+        viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
+        viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
+            binding.myNotes.setText(it.myNotes)
+        })
+
+
+        viewModel.getFavourite(args.character.char_id)
+
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true){
@@ -60,14 +71,10 @@ class EditorFragment : Fragment() {
     }
 
     private fun saveAndReturn() : Boolean{
+
+        viewModel.saveFavourite(FavouriteEntity(args.character.char_id, binding.myNotes.text.toString()))
         findNavController().navigateUp()
         return true
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

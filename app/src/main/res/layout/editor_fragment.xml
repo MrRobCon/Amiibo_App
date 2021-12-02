@@ -158,5 +158,16 @@
         tools:ignore="Autofill"
         tools:text="Birthday in here" />
 
+    <EditText
+        android:id="@+id/myNotes"
+        android:layout_width="380dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:hint="Enter your comments in here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portrayed"
+        app:layout_constraintVertical_bias="0.137" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

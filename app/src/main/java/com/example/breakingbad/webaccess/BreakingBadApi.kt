@@ -1,4 +1,4 @@
-package com.example.breakingbad.dataaccess
+package com.example.breakingbad.webaccess
 
 import com.example.breakingbad.data.CharacterEntity
 import retrofit2.http.GET

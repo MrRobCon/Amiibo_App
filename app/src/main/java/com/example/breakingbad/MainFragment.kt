@@ -36,19 +36,11 @@ class MainFragment : Fragment(),
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        with(binding.recyclerView){
-            setHasFixedSize(true)
-            val divider = DividerItemDecoration(
-                context, LinearLayoutManager(context).orientation
-            )
-            addItemDecoration(divider)
-        }
 
         viewModel.character.observe(viewLifecycleOwner, Observer {
-            Log.i("characterLogging", it.toString())
-            adapter = CharacterListAdapter(it, this@MainFragment)
+
+            adapter = CharacterListAdapter(requireContext(),it, this@MainFragment)
             binding.recyclerView.adapter = adapter
-            binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
         return binding.root
 
@@ -56,9 +48,9 @@ class MainFragment : Fragment(),
 
     override fun onItemClick(character: CharacterEntity) {
 
-        Log.i(TAG, "onItemClick : Received Character name ${character.name}")
         val action = MainFragmentDirections.actionMainFragmentToEditorFragment(character)
         findNavController().navigate(action)
 
     }
+
 }

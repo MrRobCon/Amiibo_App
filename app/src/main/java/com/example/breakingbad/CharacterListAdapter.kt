@@ -5,14 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breakingbad.data.CharacterEntity
+import com.bumptech.glide.Glide
 import com.example.breakingbad.databinding.ListItemBinding
+import android.content.Context
 
-class CharacterListAdapter(private val characterList: List<CharacterEntity>,
-                           private val listener: ListItemListener) :
+class CharacterListAdapter(
+    val context: Context,
+    private val characterList: List<CharacterEntity>,
+    private val listener: ListItemListener
+) :
 
     RecyclerView.Adapter<CharacterListAdapter.ViewHolder>() {
-
-    val selectedCharacter = arrayListOf<CharacterEntity>()
 
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -29,7 +32,10 @@ class CharacterListAdapter(private val characterList: List<CharacterEntity>,
         val character = characterList[position]
         with(holder.binding) {
             nameText.text = character.name
-            root.setOnClickListener{
+            Glide.with(context)
+                .load(character.img)
+                .into(characterImage)
+            characterImage.setOnClickListener {
                 listener.onItemClick(character)
             }
         }

@@ -29,9 +29,10 @@
             cardView:fabSize="mini"
             cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toStartOf="@+id/nameText"
-            cardView:layout_constraintHorizontal_bias="0.0"
+            cardView:layout_constraintHorizontal_bias="0.222"
             cardView:layout_constraintStart_toStartOf="parent"
             cardView:layout_constraintTop_toTopOf="parent"
+            cardView:layout_constraintVertical_bias="0.042"
             cardView:srcCompat="@drawable/ic_breaking_bad"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -44,29 +45,27 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toEndOf="parent"
-            cardView:layout_constraintHorizontal_bias="0.644"
+            cardView:layout_constraintHorizontal_bias="0.686"
             cardView:layout_constraintStart_toStartOf="parent"
             cardView:layout_constraintTop_toTopOf="parent"
-            tools:text="Example Amiibo Goes Here" />
+            cardView:layout_constraintVertical_bias="0.056"
+            tools:text="Example Character Goes Here" />
 
-        <!--<ImageView
-            android:id="@+id/amiiboImage"
-            android:layout_width="379dp"
-            android:layout_height="379dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/ic_animal_crossing_leaf"
-            android:backgroundTint="#5C9F37"
+        <ImageView
+            android:id="@+id/characterImage"
+            android:layout_width="361dp"
+            android:layout_height="468dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="Content Descr"
-            android:cropToPadding="false"
-            android:scaleType="centerInside"
+            android:scaleType="centerCrop"
             cardView:layout_constraintBottom_toBottomOf="parent"
+            cardView:layout_constraintDimensionRatio="1:1"
+            cardView:layout_constraintEnd_toEndOf="parent"
+            cardView:layout_constraintHorizontal_bias="0.473"
             cardView:layout_constraintStart_toStartOf="parent"
-            cardView:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
-            cardView:layout_constraintVertical_bias="0.0"
-            tools:ignore="HardcodedText" />-->
+            cardView:layout_constraintTop_toBottomOf="@+id/nameText"
+            tools:ignore="HardcodedText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

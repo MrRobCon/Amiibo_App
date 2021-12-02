@@ -9,12 +9,13 @@ data class CharacterEntity(
     var nickname: String?,
     var birthday: String?,
     var status: String?,
-    var portrayed: String?
-) : Parcelable
+    var portrayed: String?,
+    var img: String?) : Parcelable
 {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -30,6 +31,7 @@ data class CharacterEntity(
         parcel.writeString(birthday)
         parcel.writeString(status)
         parcel.writeString(portrayed)
+        parcel.writeString(img)
     }
 
     override fun describeContents(): Int {

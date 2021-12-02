@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.breakingbad.data.FavouriteEntity
 import com.example.breakingbad.databinding.EditorFragmentBinding
 
@@ -41,6 +42,9 @@ class EditorFragment : Fragment() {
         binding.birthday.setText(args.character.birthday)
         binding.status.setText(args.character.status)
         binding.portrayed.setText(args.character.portrayed)
+        Glide.with(this)
+            .load(args.character.img)
+            .into(binding.characterImage)
 
         viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
         viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
